@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5am sunrise Poland |  Apple watch app </title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.33/moment-timezone.min.js"></script>
+	
+	<style>
+        * {margin:0px;padding:0px;}
+body {
+  background:black;
+  width: 800px;
+  margin: 100px auto;
+  p {
+    color: grey;
+    text-align:center;
+    font-size:2em;
+  }
+	h1 + p {
+	font-variant: all-small-caps;
+	}
+}
+
+#container2 h1,#container h1 {
+  color: green;
+}
+h2 { text-align:center;color:red;text-transform:uppercase;}
+
+#container {
+  float:left;
+}
+#container, #container2 {
+  height:440px;
+  width:400px;
+  position:relative;
+  margin:auto auto;
+  background:black;
+  overflow:hidden;
+  
+  margin:0 auto 0px auto;
+    box-shadow:2px 2px 3px rgba(0,0,0,0.3);
+}
+
+#clock,#clock2 {
+  zoom:70%;
+  height:400px;
+  width:400px;
+  position:relative;
+  margin:50px auto;
+  background:white;
+  
+  #HourDial,#HourDial2 {
+    position:absolute;
+    height:80px;
+    width:5px;
+    background:black;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    border-radius:20px;
+    border:1px solid rgba(0,0,0,1);
+    margin:120px auto auto auto;
+    transform-origin: 50% 100%;
+    z-index:2;    
+    box-shadow:-2px 2px 3px rgba(0,0,0,0.3);
+    
+    div {
+      height:20px;
+      width:5px;
+      background:black;
+      position:inherit;
+      bottom:-20px;
+    }
+  }
+  
+  #MinDial, #MinDial2 {
+    @extend #HourDial;
+    height:100px;
+    width:5px;
+    margin:100px auto auto auto;
+    transform-origin: 50% 100%;
+    z-index:3;
+	position: absolute;
+	top:4px;
+	left:200px;
+	box-shadow:-2px 2px 3px black;
+	  
+  }
+  #SecDial, #SecDial2 {
+    @extend #HourDial;
+    height:130px;
+    width:2px;
+    background:#dd1b18;
+    margin:70px auto auto auto;
+    border:none;
+    transform-origin: 50% 100%;
+    z-index:4; 
+	position: absolute;
+	top:0;
+	left:198px; 
+    
+  }
+  
+  #centerDial, #centerDial2 {
+    height:15px;
+    width:15px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto auto;
+    z-index:6;
+  }
+  #centerDialEx, #centerDialEx2 {
+    @extend #centerDial;
+    background:white;
+    height:5px;
+    width:5px;
+	position:absolute;
+	top:50%;
+	left:192px;
+  }
+  
+  .text, .text2 {
+    height:30px;
+    width:100%;
+    position:absolute;
+    left:0;
+    right:0;
+    top:250px;
+    bottom:0;
+    color:black;
+    text-align:center;
+    font-size:20px;
+    margin: auto;
+    z-index:1;
+    font-family: 'Oswald', sans-serif;
+    text-transform:uppercase;
+  }
+}
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    text-align:center;
+    color:gold;
+  }
+a {text-decoration:none;color:inherit;}
+    </style>
+</head>
+<body>
+    <h1>5am sunrise</h1>
+	  <p>version 0.1</p>
+    <h2> Apple watch app</h2>
+    <div id="container">
+  <h1>5AM SUNRISE POLAND</h1>
+<div id="clock" class="clock">
+
+<svg version="1.1" id="Layer_1" class="clock" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<circle display="none" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="200" cy="200" r="181.5"/>
+<rect x="196.8" y="6.5" fill="GOLD" stroke="GOLDENROD" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="178.1" y="7.5" transform="matrix(0.9945 -0.1045 0.1045 0.9945 -1.2511 19.0619)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="159.5" y="10.4" transform="matrix(0.9781 -0.2079 0.2079 0.9781 -1.5196 34.3557)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="141.3" y="15.3" transform="matrix(0.9511 -0.309 0.309 0.9511 -1.9714 46.0937)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="123.8" y="22" transform="matrix(0.9135 -0.4067 0.4067 0.9135 -3.6658 54.7619)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="107.1" y="30.5" transform="matrix(0.866 -0.5 0.5 0.866 -7.4977 61.0875)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="91.3" y="40.8" transform="matrix(0.809 -0.5878 0.5878 0.809 -14.1475 65.9957)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="76.7" y="52.6" transform="matrix(0.7431 -0.6691 0.6691 0.7431 -24.0422 70.5554)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="63.4" y="65.9" transform="matrix(0.6691 -0.7431 0.7431 0.6691 -37.3289 75.9187)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="51.6" y="80.5" transform="matrix(0.5878 -0.809 0.809 0.5878 -53.8621 83.2561)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="41.3" y="96.2" transform="matrix(0.5 -0.866 0.866 0.5 -73.2051 93.6892)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="32.8" y="113" transform="matrix(0.4067 -0.9135 0.9135 0.4067 -94.646 108.2265)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="26.1" y="130.5" transform="matrix(0.309 -0.9511 0.9511 0.309 -117.2277 127.703)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="21.2" y="148.7" transform="matrix(0.2079 -0.9781 0.9781 0.2079 -139.7892 152.7278)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="18.3" y="167.2" transform="matrix(0.1045 -0.9945 0.9945 0.1045 -161.0191 183.6411)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="6.5" y="196.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="28" height="6.4"/>
+<rect x="18.3" y="204.8" transform="matrix(-0.1045 -0.9945 0.9945 -0.1045 -193.8547 262.9815)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="21.2" y="223.3" transform="matrix(-0.2079 -0.9781 0.9781 -0.2079 -202.6559 310.5394)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="26.1" y="241.5" transform="matrix(-0.309 -0.9511 0.9511 -0.309 -204.6545 362.2567)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="32.8" y="259" transform="matrix(-0.4067 -0.9135 0.9135 -0.4067 -198.7641 416.9525)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="41.3" y="275.7" transform="matrix(-0.5 -0.866 0.866 -0.5 -184.1358 473.2051)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="51.6" y="291.5" transform="matrix(-0.5878 -0.809 0.809 -0.5878 -160.2076 529.4038)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="63.4" y="306.1" transform="matrix(-0.6691 -0.7431 0.7431 -0.6691 -126.7417 583.8102)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="76.7" y="319.4" transform="matrix(-0.7431 -0.6691 0.6691 -0.7431 -83.8493 634.626)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="91.3" y="331.2" transform="matrix(-0.809 -0.5878 0.5878 -0.809 -32.0002 680.0654)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="107.1" y="341.5" transform="matrix(-0.866 -0.5 0.5 -0.866 27.9817 718.4284)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="123.8" y="350" transform="matrix(-0.9135 -0.4067 0.4067 -0.9135 94.9398 748.172)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="141.3" y="356.7" transform="matrix(-0.9511 -0.309 0.309 -0.9511 167.4176 767.976)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="159.5" y="361.6" transform="matrix(-0.9781 -0.2079 0.2079 -0.9781 243.7081 776.8009)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="178.1" y="364.5" transform="matrix(-0.9945 -0.1045 0.1045 -0.9945 321.9107 773.9357)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="196.8" y="365.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="215.6" y="364.5" transform="matrix(-0.9945 0.1045 -0.1045 -0.9945 475.8981 732.1243)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="234.1" y="361.6" transform="matrix(-0.9781 0.2079 -0.2079 -0.9781 547.551 693.6362)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="252.3" y="356.7" transform="matrix(-0.9511 0.309 -0.309 -0.9511 613.005 644.3691)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="269.8" y="350" transform="matrix(-0.9135 0.4067 -0.4067 -0.9135 670.4785 585.4774)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="286.6" y="341.5" transform="matrix(-0.866 0.5 -0.5 -0.866 718.4284 518.4284)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="302.3" y="331.2" transform="matrix(-0.809 0.5878 -0.5878 -0.809 755.6071 444.9513)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="316.9" y="319.4" transform="matrix(-0.7431 0.6691 -0.6691 -0.7431 781.1072 366.9737)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="330.2" y="306.1" transform="matrix(-0.6691 0.7431 -0.7431 -0.6691 794.394 286.5522)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="342" y="291.5" transform="matrix(-0.5878 0.809 -0.809 -0.5878 795.3217 205.797)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="352.3" y="275.7" transform="matrix(-0.5 0.866 -0.866 -0.5 784.1358 126.7949)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="360.8" y="259" transform="matrix(-0.4067 0.9135 -0.9135 -0.4067 761.4587 51.5344)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="367.5" y="241.5" transform="matrix(-0.309 0.9511 -0.9511 -0.309 728.2614 -18.1659)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="372.4" y="223.3" transform="matrix(-0.2079 0.9781 -0.9781 -0.2079 685.8207 -80.7197)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="375.3" y="204.8" transform="matrix(-0.1045 0.9945 -0.9945 -0.1045 635.6661 -134.8272)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="365.5" y="196.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="28" height="6.4"/>
+<rect x="375.3" y="167.2" transform="matrix(0.1045 0.9945 -0.9945 0.1045 519.2078 -214.1677)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="372.4" y="148.7" transform="matrix(0.2079 0.9781 -0.9781 0.2079 456.6246 -238.5313)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="367.5" y="130.5" transform="matrix(0.309 0.9511 -0.9511 0.309 393.6209 -252.7196)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="360.8" y="113" transform="matrix(0.4067 0.9135 -0.9135 0.4067 331.9514 -257.1917)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="352.3" y="96.2" transform="matrix(0.5 0.866 -0.866 0.5 273.2051 -252.721)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="342" y="80.5" transform="matrix(0.5878 0.809 -0.809 0.5878 218.748 -240.3508)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="330.2" y="65.9" transform="matrix(0.6691 0.7431 -0.7431 0.6691 169.6767 -221.3392)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="316.9" y="52.6" transform="matrix(0.7431 0.6691 -0.6691 0.7431 126.7842 -197.0969)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="302.3" y="40.8" transform="matrix(0.809 0.5878 -0.5878 0.809 90.5407 -169.1184)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="286.6" y="30.5" transform="matrix(0.866 0.5 -0.5 0.866 61.0875 -138.9125)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="269.8" y="22" transform="matrix(0.9135 0.4067 -0.4067 0.9135 38.2476 -107.9328)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="252.3" y="15.3" transform="matrix(0.9511 0.309 -0.309 0.9511 21.5488 -77.5131)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="234.1" y="10.4" transform="matrix(0.9781 0.2079 -0.2079 0.9781 10.2606 -48.809)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="215.6" y="7.5" transform="matrix(0.9945 0.1045 -0.1045 0.9945 3.4424 -22.7495)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+</svg>
+
+
+
+  
+  <div id="HourDial"><div></div></div>
+  <div id="MinDial"><div></div></div>
+  <div id="SecDial"><div></div></div>
+  <div id="centerDial"></div>
+  <div id="centerDialEx"></div>
+  <div class="text timezone month"></div>
+  <div class="text" style="top:-300px;"><a href="">^</a></div>
+</div>
+</div>
+<div id="container2">
+    <h1>OFFICIAL POLAND</h1>
+<div id="clock2" class="clock2">
+
+<svg version="1.1" id="Layer_1" class="clock2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<circle display="none" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="200" cy="200" r="181.5"/>
+<rect x="196.8" y="6.5" fill="GOLD" stroke="GOLDENROD" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="178.1" y="7.5" transform="matrix(0.9945 -0.1045 0.1045 0.9945 -1.2511 19.0619)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="159.5" y="10.4" transform="matrix(0.9781 -0.2079 0.2079 0.9781 -1.5196 34.3557)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="141.3" y="15.3" transform="matrix(0.9511 -0.309 0.309 0.9511 -1.9714 46.0937)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="123.8" y="22" transform="matrix(0.9135 -0.4067 0.4067 0.9135 -3.6658 54.7619)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="107.1" y="30.5" transform="matrix(0.866 -0.5 0.5 0.866 -7.4977 61.0875)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="91.3" y="40.8" transform="matrix(0.809 -0.5878 0.5878 0.809 -14.1475 65.9957)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="76.7" y="52.6" transform="matrix(0.7431 -0.6691 0.6691 0.7431 -24.0422 70.5554)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="63.4" y="65.9" transform="matrix(0.6691 -0.7431 0.7431 0.6691 -37.3289 75.9187)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="51.6" y="80.5" transform="matrix(0.5878 -0.809 0.809 0.5878 -53.8621 83.2561)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="41.3" y="96.2" transform="matrix(0.5 -0.866 0.866 0.5 -73.2051 93.6892)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="32.8" y="113" transform="matrix(0.4067 -0.9135 0.9135 0.4067 -94.646 108.2265)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="26.1" y="130.5" transform="matrix(0.309 -0.9511 0.9511 0.309 -117.2277 127.703)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="21.2" y="148.7" transform="matrix(0.2079 -0.9781 0.9781 0.2079 -139.7892 152.7278)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="18.3" y="167.2" transform="matrix(0.1045 -0.9945 0.9945 0.1045 -161.0191 183.6411)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="6.5" y="196.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="28" height="6.4"/>
+<rect x="18.3" y="204.8" transform="matrix(-0.1045 -0.9945 0.9945 -0.1045 -193.8547 262.9815)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="21.2" y="223.3" transform="matrix(-0.2079 -0.9781 0.9781 -0.2079 -202.6559 310.5394)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="26.1" y="241.5" transform="matrix(-0.309 -0.9511 0.9511 -0.309 -204.6545 362.2567)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="32.8" y="259" transform="matrix(-0.4067 -0.9135 0.9135 -0.4067 -198.7641 416.9525)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="41.3" y="275.7" transform="matrix(-0.5 -0.866 0.866 -0.5 -184.1358 473.2051)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="51.6" y="291.5" transform="matrix(-0.5878 -0.809 0.809 -0.5878 -160.2076 529.4038)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="63.4" y="306.1" transform="matrix(-0.6691 -0.7431 0.7431 -0.6691 -126.7417 583.8102)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="76.7" y="319.4" transform="matrix(-0.7431 -0.6691 0.6691 -0.7431 -83.8493 634.626)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="91.3" y="331.2" transform="matrix(-0.809 -0.5878 0.5878 -0.809 -32.0002 680.0654)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="107.1" y="341.5" transform="matrix(-0.866 -0.5 0.5 -0.866 27.9817 718.4284)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="123.8" y="350" transform="matrix(-0.9135 -0.4067 0.4067 -0.9135 94.9398 748.172)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="141.3" y="356.7" transform="matrix(-0.9511 -0.309 0.309 -0.9511 167.4176 767.976)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="159.5" y="361.6" transform="matrix(-0.9781 -0.2079 0.2079 -0.9781 243.7081 776.8009)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="178.1" y="364.5" transform="matrix(-0.9945 -0.1045 0.1045 -0.9945 321.9107 773.9357)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="196.8" y="365.5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="215.6" y="364.5" transform="matrix(-0.9945 0.1045 -0.1045 -0.9945 475.8981 732.1243)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="234.1" y="361.6" transform="matrix(-0.9781 0.2079 -0.2079 -0.9781 547.551 693.6362)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="252.3" y="356.7" transform="matrix(-0.9511 0.309 -0.309 -0.9511 613.005 644.3691)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="269.8" y="350" transform="matrix(-0.9135 0.4067 -0.4067 -0.9135 670.4785 585.4774)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="286.6" y="341.5" transform="matrix(-0.866 0.5 -0.5 -0.866 718.4284 518.4284)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="302.3" y="331.2" transform="matrix(-0.809 0.5878 -0.5878 -0.809 755.6071 444.9513)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="316.9" y="319.4" transform="matrix(-0.7431 0.6691 -0.6691 -0.7431 781.1072 366.9737)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="330.2" y="306.1" transform="matrix(-0.6691 0.7431 -0.7431 -0.6691 794.394 286.5522)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="342" y="291.5" transform="matrix(-0.5878 0.809 -0.809 -0.5878 795.3217 205.797)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="352.3" y="275.7" transform="matrix(-0.5 0.866 -0.866 -0.5 784.1358 126.7949)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="360.8" y="259" transform="matrix(-0.4067 0.9135 -0.9135 -0.4067 761.4587 51.5344)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="367.5" y="241.5" transform="matrix(-0.309 0.9511 -0.9511 -0.309 728.2614 -18.1659)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="372.4" y="223.3" transform="matrix(-0.2079 0.9781 -0.9781 -0.2079 685.8207 -80.7197)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="375.3" y="204.8" transform="matrix(-0.1045 0.9945 -0.9945 -0.1045 635.6661 -134.8272)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="365.5" y="196.8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="28" height="6.4"/>
+<rect x="375.3" y="167.2" transform="matrix(0.1045 0.9945 -0.9945 0.1045 519.2078 -214.1677)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="372.4" y="148.7" transform="matrix(0.2079 0.9781 -0.9781 0.2079 456.6246 -238.5313)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="367.5" y="130.5" transform="matrix(0.309 0.9511 -0.9511 0.309 393.6209 -252.7196)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="360.8" y="113" transform="matrix(0.4067 0.9135 -0.9135 0.4067 331.9514 -257.1917)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="352.3" y="96.2" transform="matrix(0.5 0.866 -0.866 0.5 273.2051 -252.721)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="342" y="80.5" transform="matrix(0.5878 0.809 -0.809 0.5878 218.748 -240.3508)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="330.2" y="65.9" transform="matrix(0.6691 0.7431 -0.7431 0.6691 169.6767 -221.3392)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="316.9" y="52.6" transform="matrix(0.7431 0.6691 -0.6691 0.7431 126.7842 -197.0969)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="302.3" y="40.8" transform="matrix(0.809 0.5878 -0.5878 0.809 90.5407 -169.1184)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="286.6" y="30.5" transform="matrix(0.866 0.5 -0.5 0.866 61.0875 -138.9125)" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="269.8" y="22" transform="matrix(0.9135 0.4067 -0.4067 0.9135 38.2476 -107.9328)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="252.3" y="15.3" transform="matrix(0.9511 0.309 -0.309 0.9511 21.5488 -77.5131)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="234.1" y="10.4" transform="matrix(0.9781 0.2079 -0.2079 0.9781 10.2606 -48.809)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+<rect x="215.6" y="7.5" transform="matrix(0.9945 0.1045 -0.1045 0.9945 3.4424 -22.7495)" stroke="#000000" stroke-miterlimit="10" width="6.4" height="28"/>
+</svg>
+
+
+
+  
+  <div id="HourDial2"><div></div></div>
+  <div id="MinDial2"><div></div></div>
+  <div id="SecDial2"><div></div></div>
+  <div id="centerDial2"></div>
+  <div id="centerDialEx2"></div>
+  <div class="text2 timezone month"></div>
+  <div class="text2" style="top:-300px;"><a href="">^</a></div>
+</div>
+</div>
+	<script>
+		// https://github.com/moment/moment-timezone/blob/develop/data/packed/latest.json
+moment.tz.add([
+  "America/Los_Angeles|PST PDT|80 70|0101|1Lzm0 1zb0 Op0",
+  "America/New_York|EST EDT|50 40|0101|1Lz50 1zb0 Op0",
+  "Europe/Warsaw|WMT CET CEST EET EEST|-1o -10 -20 -20 -30|012121234312121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121|-2ctdo 1LXo 11d0 1iO0 11A0 1o00 11A0 1on0 11A0 6zy0 HWP0 5IM0 WM0 1fA0 1cM0 1dz0 1mL0 1en0 15B0 1aq0 1nA0 11A0 1io0 17c0 1fA0 1a00 iDX0 LA0 1cM0 1cM0 1C00 Oo0 1cM0 1cM0 1zc0 Oo0 1zc0 Oo0 1zc0 Oo0 1C00 LA0 uso0 1a00 1fA0 1cM0 1cM0 1cM0 1fA0 1a00 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cN0 1cM0 1cM0 1cM0 1cM0 1fA0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1cM0 1fA0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00 11A0 1qM0 WM0 1qM0 WM0 1qM0 WM0 1qM0 11A0 1o00 11A0 1o00|17e5"
+]);
+
+$(document).ready(function () {
+  window.setInterval(function () {
+    var HourAngle, MinAngle, SecAngle, CurrentTime, Min, Hour, Sec;
+
+    CurrentTime = moment().tz("Europe/Warsaw");
+    switch (CurrentTime.month()) {
+      case 0:
+        CurrentTime.add(-2, "hours").add(-35, "minutes");
+        $(".text.timezone.month").text("Warsaw January");
+        break;
+      case 1:
+        CurrentTime.add(-1, "hours").add(-48, "minutes");
+        $(".text").innerHTML = "Warsaw February";
+        break;
+      case 2:
+        CurrentTime.add(-47, "minutes");
+        $(".text.timezone.month").text("Warsaw March");
+        break;
+      case 3:
+        CurrentTime.add(-36, "minutes");
+        $(".text.timezone.month").text("Warsaw April");
+        break;
+      case 4:
+        CurrentTime.add(22, "minutes");
+        $(".text.timezone.month").text("Warsaw May");
+        break;
+      case 5:
+        CurrentTime.add(49, "minutes");
+        $(".text.timezone.month").text("Warsaw June");
+        break;
+      case 6:
+        CurrentTime.add(29, "minutes");
+        $(".text.timezone.month").text("Warsaw July");
+        break;
+      case 7:
+        CurrentTime.add(-18, "minutes");
+        $(".text.timezone.month").text("Warsaw August");
+        break;
+      case 8:
+        CurrentTime.add(-1, "hours").add(-9, "minutes");
+        $(".text.timezone.month").text("Warsaw September");
+        break;
+      case 9:
+        CurrentTime.add(-1, "hours").add(-59, "minutes");
+        $(".text.timezone.month").text("Warsaw October");
+        break;
+      case 10:
+        CurrentTime.add(-1, "hours").add(-55, "minutes");
+        $(".text.timezone.month").text("Warsaw November");
+        break;
+      case 11:
+        CurrentTime.add(-2, "hours").add(-36, "minutes");
+        $(".text.timezone.month").text("Warsaw December");
+        break;
+    }
+    Hour = CurrentTime.hour();
+    Min = CurrentTime.minutes();
+    Sec = CurrentTime.seconds();
+
+    HourAngle = ((60 * Hour + Min) * 1) / 2;
+    //console.log(HourAngle);
+
+    MinAngle = 6 * Min;
+    // console.log(MinAngle);
+
+    SecAngle = 6 * Sec;
+    //console.log(Sec);
+
+    $("#HourDial").css({
+      transform: "rotate(" + HourAngle + "deg)"
+    });
+
+    $("#MinDial").css({
+      transform: "rotate(" + MinAngle + "deg)"
+    });
+
+    $("#SecDial").css({
+      transform: "rotate(" + SecAngle + "deg)"
+    });
+
+    SecAngle = SecAngle + 6;
+  }, 1000);
+  // Clock 2
+  window.setInterval(function () {
+    var HourAngle2, MinAngle2, SecAngle2, CurrentTime2, Min2, Hour2, Sec2;
+
+    CurrentTime2 = moment().tz("Europe/Warsaw");
+    switch (CurrentTime2.month()) {
+      case 0:
+        $(".text2.timezone.month").text("Warsaw January");
+        break;
+      case 1:
+        $(".text2").innerHTML = "Warsaw February";
+        break;
+      case 2:
+        $(".text2.timezone.month").text("Warsaw March");
+        break;
+      case 3:
+        $(".text2.timezone.month").text("Warsaw April");
+        break;
+      case 4:
+        $(".text2.timezone.month").text("Warsaw May");
+        break;
+      case 5:
+        $(".text2.timezone.month").text("Warsaw June");
+        break;
+      case 6:
+        $(".text2.timezone.month").text("Warsaw July");
+        break;
+      case 7:
+        $(".text2.timezone.month").text("Warsaw August");
+        break;
+      case 8:
+        $(".text2.timezone.month").text("Warsaw September");
+        break;
+      case 9:
+        $(".text2.timezone.month").text("Warsaw October");
+        break;
+      case 10:
+        $(".text2.timezone.month").text("Warsaw November");
+        break;
+      case 11:
+        $(".text2.timezone.month").text("Warsaw December");
+        break;
+    }
+    Hour2 = CurrentTime2.hour();
+    Min2 = CurrentTime2.minutes();
+    Sec2 = CurrentTime2.seconds();
+
+    HourAngle2 = ((60 * Hour2 + Min2) * 1) / 2;
+    //console.log(HourAngle);
+
+    MinAngle2 = 6 * Min2;
+    // console.log(MinAngle);
+
+    SecAngle2 = 6 * Sec2;
+    //console.log(Sec);
+
+    $("#HourDial2").css({
+      transform: "rotate(" + HourAngle2 + "deg)"
+    });
+
+    $("#MinDial2").css({
+      transform: "rotate(" + MinAngle2 + "deg)"
+    });
+
+    $("#SecDial2").css({
+      transform: "rotate(" + SecAngle2 + "deg)"
+    });
+
+    SecAngle2 = SecAngle2 + 6;
+
+    // console.log('Executed');
+  }, 1000);
+});
+
+	</script>
+</body>
+</html>
