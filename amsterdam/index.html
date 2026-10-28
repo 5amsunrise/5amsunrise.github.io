@@ -334,7 +334,7 @@ $(document).ready(function () {
   window.setInterval(function () {
     var HourAngle, MinAngle, SecAngle, CurrentTime, Min, Hour, Sec;
 
-    CurrentTime = moment().tz("NL|Europe/Brussels Europe/Amsterdam");
+    CurrentTime = moment().tz("Europe/Amsterdam);
     switch (CurrentTime.month()) {
       case 0:
         CurrentTime.add(-3, "hours").add(-40, "minutes");
@@ -416,7 +416,7 @@ $(document).ready(function () {
   window.setInterval(function () {
     var HourAngle2, MinAngle2, SecAngle2, CurrentTime2, Min2, Hour2, Sec2;
 
-    CurrentTime2 = moment().tz("NL|Europe/Brussels Europe/Amsterdam");
+    CurrentTime2 = moment().tz("Europe/Amsterdam");
     switch (CurrentTime2.month()) {
       case 0:
         $(".text2.timezone.month").text("Amsterdam January");
