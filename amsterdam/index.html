@@ -334,7 +334,7 @@ $(document).ready(function () {
   window.setInterval(function () {
     var HourAngle, MinAngle, SecAngle, CurrentTime, Min, Hour, Sec;
 
-    CurrentTime = moment().tz("Europe/Amsterdam);
+    CurrentTime = moment().tz("Europe/Amsterdam");
     switch (CurrentTime.month()) {
       case 0:
         CurrentTime.add(-3, "hours").add(-40, "minutes");
